@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet } from "react-native";
-import { getUpcomingTimeStatus } from "../utils/timeUtils";
+import { getTimeStatus } from "../utils/timeUtils";
 
 export default function UpcomingLectureCard({ lecture }) {
   if (!lecture) {
@@ -10,7 +10,7 @@ export default function UpcomingLectureCard({ lecture }) {
     );
   }
 
-  const timeStatus = getUpcomingTimeStatus(lecture.start);
+  const timeStatus = getTimeStatus(lecture);
 
   return (
     <View style={styles.card}>
@@ -34,6 +34,7 @@ export default function UpcomingLectureCard({ lecture }) {
     </View>
   );
 }
+
 
 
 const styles = StyleSheet.create({
